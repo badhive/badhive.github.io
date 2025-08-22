@@ -1,0 +1,31 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'My New Hugo Site'
+
+[taxonomies]
+author = "authors"
+tag = "tags"
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 1
+
+[[menu.main]]
+name = "Authors"
+url = "/authors/"
+weight = 2
+
+[[menu.main]]
+name = "GitHub"
+url = "https://github.com/"
+weight = 3
+
+[params]
+logo = "logo.png"
+
+[[params.author]]
+name = "Hugo"
+about = "Hugo"
+github = "hugo"
+x = "hugo"

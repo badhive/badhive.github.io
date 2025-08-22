@@ -1,0 +1,22 @@
+<p>
+{{ $taxonomy := "authors" }}
+{{ with .Param $taxonomy }}
+{{ range $i, $author := . }}
+{{- with $.Site.GetPage (printf "/%s/%s" $taxonomy $author) -}}
+    {{ if gt $i 0 }}, {{- end }}
+    <a href="{{ .Permalink }}">{{ $author | urlize }}</a>
+{{- end -}}
+{{- end }}
+tagged
+{{ end }}
+
+{{ $taxonomy := "tags" }}
+{{ with .Param $taxonomy }}
+{{ range $i, $tag := . }}
+{{- with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+    {{ if gt $i 0 }}, {{- end }}
+    <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
+{{- end -}}
+{{- end -}}
+{{ end }}
+</p>

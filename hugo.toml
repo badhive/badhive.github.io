@@ -1,0 +1,43 @@
+baseURL = 'https://badhive.org/'
+languageCode = 'en-gb'
+title = 'BadHive'
+theme = 'badhive'
+publishDir = 'docs'
+
+[taxonomies]
+author = "authors"
+tag = "tags"
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 1
+
+[[menu.main]]
+name = "Authors"
+url = "/authors/"
+weight = 2
+
+[[menu.main]]
+name = "GitHub"
+url = "https://github.com/badhive"
+weight = 3
+
+[[menu.main]]
+name = "Contact"
+url = "mailto:contact@badhive.org"
+weight = 4
+
+[[menu.main]]
+name = "RSS"
+url = "/index.xml"
+weight = 5
+
+[params]
+logo = 'logo.jpg'
+
+[[params.author]]
+name = "pygrum"
+about = "Likes to tinker with closed-source applications. Currently into binary instrumentation and firmware reversing."
+github = "pygrum"
+x = "spygrum"

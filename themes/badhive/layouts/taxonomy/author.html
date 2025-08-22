@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row">
+        <h2>Author: {{ .Title }}</h2>
+        {{ $author := .Title | lower | urlize }}
+        {{ range site.Params.author }}
+        {{ $name := .name | lower | urlize }}
+        {{ if eq $name $author }}
+        <p>
+            {{ with .github }}
+            <a href="https://github.com/{{ . }}">GitHub</a>
+            {{ end }}
+            |
+            {{ with .x }}
+            <a href="https://x.com/@{{ . }}">Twitter</a>
+            {{ end }}
+        </p>
+    </div>
+    {{ with .about }}
+    <p>{{ . }}</p>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    <ul>
+        {{ range .Data.Pages }}
+        <li>
+            <div class="row">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ $dateMachine := .Date | time.Format "2006-01-02" }}
+                <time datetime="{{ $dateMachine }}" style="color: #a0a0a0;">{{ $dateMachine }}</time>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'OSD Mono';
+    src: url('/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
+
+body {
+    font-family: 'OSD Mono', monospace;
+    font-weight: 100;
+    color: #ffffff;
+    background-color: #000;
+}
+
+.container {
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1px;
+}
+
+a {
+    color: #e9d0d0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cf7f7f;
+}
+
+.blogpost {
+    color: #fff;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.topbar-right a:hover {
+    color: #cf7f7f;
+}
+
+.topbar-left a {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.content {
+    padding: 20px;
+}

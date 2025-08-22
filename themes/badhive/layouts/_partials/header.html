@@ -1,0 +1,13 @@
+<nav class="topbar">
+    <div class="topbar-left">
+        <a href="{{ .Site.BaseURL }}">
+            <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="logo" style="height: 24px; vertical-align: middle; border-radius: 50%; transform: translateY(-1px);">
+            {{ .Site.Title }}
+        </a>
+    </div>
+    <div class="topbar-right">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+    </div>
+</nav>

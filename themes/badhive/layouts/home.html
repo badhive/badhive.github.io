@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range site.RegularPages }}
+  {{ if ne .Params.layout "about" }}
+  <div class="row">
+    <h2 style="margin-bottom: 0;"><a class="blogpost" href="{{ .RelPermalink }}">» {{ .LinkTitle }}</a></h2>
+    {{ $dateMachine := .Date | time.Format "2006-01-02" }}
+    <time datetime="{{ $dateMachine }}" style="color: #a0a0a0;">{{ $dateMachine }}</time>
+  </div>
+  {{ partial "summary.html" . }}
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}

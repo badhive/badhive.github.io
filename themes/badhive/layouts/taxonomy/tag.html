@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+    <h2>{{ .Title }}</h2>
+    <ul>
+        {{ range .Data.Pages }}
+            <div class="row">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ $dateMachine := .Date | time.Format "2006-01-02" }}
+                <time datetime="{{ $dateMachine }}" style="color: #a0a0a0;">{{ $dateMachine }}</time>
+            </div>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
